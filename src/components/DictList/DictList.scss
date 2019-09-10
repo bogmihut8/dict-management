@@ -1,5 +1,52 @@
+.dict-actions {
+    display: flex;
+    padding-bottom: 20px;
+    justify-content: space-between;
+    .search-field {
+        width: 25em;
+        label {
+            color: #fafafa;
+        }
+        input {
+            color: white;
+        }
+        .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+            border-color: #fafafa;
+        }
+        fieldset {
+            border-color: #fafafa;
+        }
+    }
+    button {
+        border-color: #fafafa;
+        color: #fafafa;
+    }
+}
+
 .dict-grid {
     .dict-row {
-        min-width: 5em;
+        .MuiPaper-rounded {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+            margin-bottom: 20px;
+            .title span {
+                position: relative;
+                bottom: 6px;
+                left: 10px;
+            }
+            &:hover {
+                color: #4671b8;
+                border-left: 5px solid #6ad4f7;
+                & .delete {
+                    color: #c75a4c;
+                    display: block;
+                }
+            }
+            .delete {
+                display: none;
+            }
+        }
     }
 }
