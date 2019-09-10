@@ -4,6 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import NotesIcon from '@material-ui/icons/Notes';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
+import { Link } from 'react-router-dom';
 
 import data from '../data/dictList.json'
 
@@ -30,10 +31,10 @@ function DictList() {
       </div>
       <Grid container className="dict-grid">
           <Grid item xs={12} className="dict-row">
-            { list.map(({title, description, date}, id) => (<Paper key={`dictList-${id}`}>
+            { list.map(({id, title, description, date}, index) => (<Link to={`/dict/${id}`} key={`dictList-${id}`}><Paper>
                 <span className="title"><NotesIcon /><span>{title} - {description}</span></span>
                 <span className="date">{date}</span>
-              </Paper>))
+              </Paper></Link>))
             }
           </Grid>
       </Grid>

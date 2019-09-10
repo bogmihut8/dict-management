@@ -1,0 +1,38 @@
+.dict {
+    text-align: center;
+    .apply {
+        border-color: #fafafa;
+        color: #fafafa;
+    }
+}
+
+.modal {
+    margin-top: 10em;
+    background-color: #fafafa;
+    outline: none;
+    border-radius: 5px;
+    .modal-title {
+        text-align: center;
+        padding: 20px 0px;
+        font-size: 20px;
+    }
+    .initial {
+        display: flex;
+    }
+    .json-editor,
+    .result {
+        width: 50%;
+        margin: 10px 10px;
+    }
+    .result {
+        overflow-y: scroll;
+        height: 350px;
+    }
+    .modal-apply {
+        text-align: center;
+        padding: 20px 0;
+    }
+    .alignLeft {
+        text-align: left;
+    }
+}

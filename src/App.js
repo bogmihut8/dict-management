@@ -1,18 +1,21 @@
 import React from 'react';
-import { Container } from '@material-ui/core';
-import Header from './components/Header/Header'
-import DictList from './components/DictList/DictList'
+import Home from './components/Home/Home'
+import Dict from './components/Dict/Dict'
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import './App.scss';
 
 function App() {
   return (
-      <div className="App-body">
-        <Container maxWidth="md">
-          <Header/>
-          <DictList />
-        </Container>
+    <Router>
+      <div className="App">
+        <div className="App-body">
+          <Route exact path="/dict/:id" component={Dict} />
+          <Route exact path="/" component={Home} />
+        </div>
       </div>
+    </Router>
+    
   );
 }
 
