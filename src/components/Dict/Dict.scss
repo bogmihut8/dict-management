@@ -1,8 +1,69 @@
 .dict {
     text-align: center;
-    .apply {
-        border-color: #fafafa;
-        color: #fafafa;
+    .info {
+        display: flex;
+        justify-content: space-around;
+        .title-field {
+            label {
+                color: #fafafa;
+                &:not(.Mui-focused) {
+                    margin-left: -1px;
+                    font-size: 15px;
+                }
+            }
+            input {
+                color: white;
+            }
+            .MuiOutlinedInput-root {
+                height: 100%;
+            }
+            .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+                border-color: #fafafa;
+            }
+            fieldset {
+                border-color: #fafafa;
+            }
+        }
+        .right {
+            .labels {
+                .label {
+                    font-size: 11px;
+                    border: 1px solid #ccc;
+                    padding: 2px 10px;
+                    color: #fafafa;
+                    text-transform: uppercase;
+                    margin-right: 10px;
+                }
+            }
+            .date {
+                margin: 0;
+                padding-right: 10px;
+                text-align: right;
+                position: relative;
+                top: 10px;
+            }
+        }
+    }
+    .description {
+        margin: 30px 0 60px 0;
+        font-style: italic;
+    }
+    .actions {
+        margin: 60px 0;
+        .validate,
+        .download {
+            margin-left: 30px;
+            .MuiButton-label {
+                font-size: 13px;
+            }
+        }
+        .apply {
+            border-color: #4671b8;
+            color: #4671b8;
+            .MuiButton-label {
+                font-size: 13px;
+            }
+        }
     }
 }
 

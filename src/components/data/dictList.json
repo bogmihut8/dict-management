@@ -4,7 +4,8 @@
             "id": 0,
             "title": "Title 1",
             "description": "test",
-            "date": 1568052829,
+            "date": 1568475130217,
+            "labels": ["test", "test2", "test2"],
             "pairs": [
                 { "source": "test", "target": "test 2" },
                 { "source": "another", "target": "one" },
@@ -15,7 +16,8 @@
             "id": 1,
             "title": "Colors",
             "description": "another test",
-            "date": 1568052829,
+            "date": 1568475130217,
+            "labels": ["test", "test2"],
             "pairs": [
                 { "source": "test", "target": "test 2" },
                 { "source": "another", "target": "one" },
@@ -26,7 +28,8 @@
             "id": 2,
             "title": "Entertainments",
             "description": "test",
-            "date": 1568052829,
+            "date": 1568475130217,
+            "labels": ["test", "test2", "test2"],
             "pairs": [
                 { "source": "test", "target": "test 2" },
                 { "source": "another", "target": "one" },
@@ -37,7 +40,8 @@
             "id": 3,
             "title": "Something something",
             "description": "custom dictionary",
-            "date": 1568052829,
+            "date": 1568475130217,
+            "labels": ["test", "test2", "test2", "test2"],
             "pairs": [
                 { "source": "test", "target": "test 2" },
                 { "source": "another", "target": "one" },
@@ -48,7 +52,8 @@
             "id": 4,
             "title": "Dict list 5",
             "description": "test test for testing",
-            "date": 1568052829,
+            "date": 1568475130217,
+            "labels": ["test"],
             "pairs": [
                 { "source": "test", "target": "test 2" },
                 { "source": "another", "target": "one" },

@@ -13,14 +13,25 @@
         justify-content: center;
         margin-bottom: 10px;
         input {
-            width: 20em;
+            width: 22em;
             padding: 10px 15px;
-            border: 1px solid #ccc;
             margin: 0 5px;
             font-size: 13px;
+            background-color: transparent;
+            border-bottom: 1px solid #ccc;
+            border-top: none;
+            color: white;
+            border-left: none;
+            border-right: none;
         }
         .arrow {
             margin-top: 8px;
         }
     }
+}
+
+.add {
+    background: transparent;
+    color: #ccc;
+    margin-top: 15px;
 }

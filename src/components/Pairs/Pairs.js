@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+import AddIcon from '@material-ui/icons/Add';
 
 import './Pairs.scss';
 
@@ -16,10 +17,6 @@ function Pairs(props) {
 
   return (
     <>
-        <div className="pairs-header">
-            <span className="source">Source</span>
-            <span className="target">Target</span>
-        </div>
         <div className="pairs">
             { pairs.map((pair, index) => 
                 <div className="pair" key={`pair-${index}`}>
@@ -30,7 +27,7 @@ function Pairs(props) {
             )
             }
         </div>
-        <button onClick={addPair}>Add</button>
+        <button onClick={addPair} className="add"><AddIcon /></button>
     </>
   );
 }

@@ -7,14 +7,14 @@ import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import JSONInput from 'react-json-editor-ajrm';
 import locale    from 'react-json-editor-ajrm/locale/en';
+import TextField from '@material-ui/core/TextField';
+import ReactTimeAgo from 'react-time-ago'
 
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-
-import data from '../data/dictList.json'
 
 import './Dict.scss';
 
@@ -24,7 +24,8 @@ function Dict({match}) {
         title: '',
         description: '',
         date: null,
-        pairs: []
+        pairs: [],
+        labels: []
     });
     const [error, setError] = useState('');
     const [open, setOpen] = useState(false);
@@ -39,7 +40,8 @@ function Dict({match}) {
     };
 
     useEffect(() => {
-        const filteredDict = data.dataList.find((el) => el.id === Number(id));
+        const lsData = JSON.parse(localStorage.getItem('data'));
+        const filteredDict = lsData.find((el) => el.id === Number(id));
         if(!filteredDict) {
             setError('No dictionary found with this id :(')
         }
@@ -70,13 +72,39 @@ function Dict({match}) {
                         </p>
                     </header>
                     <div className='dict'>
-                        <p>Title: {dict.title}</p>
-                        <p>{dict.description}</p>
-                        <p>Date: {dict.date}</p>
-                        <Button className="apply" onClick={handleOpen} variant="outlined">
-                            Apply
-                        </Button>
+                        <div className="info">
+                            <TextField
+                                id="outlined-name"
+                                label="Title"
+                                variant="outlined"
+                                value={dict.title}
+                                className="title-field"
+                                onChange={(e) => {
+                                    setDict({...dict, title: e.target.value})
+                                }}
+                            />
+                            <div className="right">
+                                <div className="labels">
+                                    {dict.labels.map((el, id) => <span className="label" key={`label-${id}`}>{el}</span>)}
+                                </div>
+                                { dict.date && <p className="date">Added <ReactTimeAgo date={dict.date}/></p>}
+                            </div>
+                        </div>
+                        <div className="description">
+                            <p>"{dict.description}"</p>
+                        </div>
                         <Pairs pairs={dict.pairs}></Pairs>
+                        <div className="actions">
+                            <Button className="apply" onClick={handleOpen} variant="contained">
+                                Apply
+                            </Button>
+                            <Button className="validate" onClick={() => {}} variant="contained">
+                                Validate
+                            </Button>
+                            <Button className="download" onClick={() => {}} variant="contained">
+                                Download csv
+                            </Button>
+                        </div>
                     </div>
                     <Modal
                         aria-labelledby="transition-modal-title"
